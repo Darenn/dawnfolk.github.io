@@ -79,7 +79,7 @@ h2 {
 	}
 
 .section-trailer {
-	background: url("./images/img_trailer_bg.png") no-repeat center center;
+	/*background: url("./images/img_trailer_bg.png") no-repeat center center;*/
   	background-size: cover;
   	position: relative;
   	padding:0;
