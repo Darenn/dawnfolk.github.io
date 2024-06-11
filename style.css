@@ -180,6 +180,11 @@ border: 1px solid red;	/* debug */
 	opacity: 0.7
 	}
 
+.award {
+	width: 100px;
+  	height: 100px;
+}
+
 .section-awards {
 	/* background-color: var(--main-bg-color); */
 	padding: 30px 10px;
@@ -189,6 +194,11 @@ border: 1px solid red;	/* debug */
 	align-items: center;
 	}
 	
+.awards-container {
+	align-items: center;
+	max-width: 60%;
+	}
+
 .section-quotes {
 	/* background-color: var(--main-bg-color); */
 	padding: 10px;
@@ -197,6 +207,7 @@ border: 1px solid red;	/* debug */
 	justify-content: center;
 	align-items: center;
 	}
+
 
 .quotes-container {
 	max-width: 1200px;		/* Modify here to get only 2 columns */
