@@ -7,7 +7,7 @@
 }
 
 body {
-	--main-bg-color: #ddcaaa;
+	--main-bg-color: #050d16;
 	background-color: var(--main-bg-color);
 }
 /* 
@@ -21,6 +21,7 @@ img {
 h2 {
 	font-family: "Annie Use Your Telescope", Arial, serif;
 	font-size: 1.8em;
+	color: #e3ddd1;
 	}
 
 .section-header {
@@ -41,7 +42,7 @@ h2 {
 
 .header-logo img {
 	/* border: 1px solid red; */
-	width: 300px;
+	width: 900px;
 	display: flex;
 	justify-content: center;
 	margin: 30px;
@@ -143,6 +144,7 @@ border: 1px solid red;	/* debug */
 	}
 
 .bullet-list {
+	color: #e3ddd1;
 	font-size: 1.2em;
 	line-height: 1.6em;
 	list-style-type: square;
@@ -205,6 +207,7 @@ border: 1px solid red;	/* debug */
 
 .quote {
 /* 	border: 1px solid green; */
+	color: #e3ddd1;
 	width: 330px;
 	display: flex;
 	flex-direction: column;
@@ -227,6 +230,7 @@ border: 1px solid red;	/* debug */
 
 footer {
 	/* background-color: tan; */
+	color: #e3ddd1;
 	padding: 10px;
 	max-width: 100%;
 	display: flex;
@@ -246,7 +250,7 @@ footer a {
 	}
 
 footer a:visited, footer a:link{
-	color: black;
+	color: #e3ddd1;
 	}
 	
 footer a:visited:hover, footer a:hover {
