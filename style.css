@@ -4,12 +4,19 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	cursor: url('images/cursor_mouse.png') 16 16, auto;
 }
 
 body {
-	--main-bg-color: #050d16;
+	--main-bg-color: #06101c;
 	background-color: var(--main-bg-color);
+	cursor: url('images/cursor_mouse.png') 16 16, auto;
 }
+
+a {
+	cursor: url('images/cursor_mouse.png') 16 16, auto;
+}
+
 /* 
 img {
     max-width: 100%;
@@ -25,27 +32,72 @@ h2 {
 	}
 
 .section-header {
-	background-image: url("./images/img_banner2.png");
-	/* background-image: url("./images/swing.gif"); */
-	height: 650px;
-	background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center bottom;
-    /* background-attachment: fixed; */
-    display: flex;
+	position: relative;
+	height: 1080px;
+	overflow: hidden;
+	
+	display: flex;
 	justify-content: center;
+	align-items: top;
 	}
+	
+	.bg-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
+	transform: translate(-50%, -50%);
+	z-index: 0;
+	}
+	
+.header-content {
+	position: absolute;
+	z-index: 1;
+	
+	text-align: center;
+	color: white;
+	}
+	  
 
 @media only screen and (min-width: 960px) {
 	.section-header { background-attachment: fixed;}
+	
 }
 
-.header-logo img {
+#platform_container {
+	display: flex;
+}
+
+.platform {
 	/* border: 1px solid red; */
-	width: 900px;
+	position: relative;
+	bottom: 450px;
+	left: 160px;
+	height: 70px;
+	width: 200px;
 	display: flex;
 	justify-content: center;
-	margin: 30px;
+	margin-right: 10px;
+	filter: drop-shadow(0 0px 5px rgba(255,130,1));
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.platform:hover {
+	filter: drop-shadow(0 0px 5px rgba(255,255,255));
+    transform: scale(1.1);      /* make it 20% bigger */
+}
+
+#dawnfolk_title {
+	/* border: 1px solid red; */
+	width: 900px;
+	display: float;
+	justify-content: center;
+	margin-top: 0px;
+	margin-bottom: 300px;
 }
 
 .section-download {
@@ -102,6 +154,14 @@ h2 {
     }
 }
 @media screen and (max-width: 40em) {
+	#dawnfolk_title { width: 400px;}
+	.platform {
+		bottom:350px;
+		height: 30px;
+		width: 90px;
+		margin: 10px;
+	}
+	#platform_container { display: none;}
     .section-trailer iframe {
        	height: 70%;
        	margin: 20px 0;

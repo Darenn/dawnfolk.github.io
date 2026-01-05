@@ -4,7 +4,8 @@
  	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-  	<title>Dawnfolk by Darenn Keller</title>
+  	<title>Dawnfolk</title>
+	  <link rel="icon" href="images/emote_lueur.png">
   	
   	<link rel="stylesheet" href="style.css">
   	<link href="lightbox/css/lightbox.css" rel="stylesheet" type='text/css'>
@@ -24,27 +25,47 @@
 
   </head>
   <body>
-  	<section class="section-header">
-  		<div class="header-logo">
-  			<img src="./images/img_logo.png" alt="dawnfolk" />
-  		</div>
-  	</section>
 
+	<section class="section-header">
+		<video
+		  class="bg-video"
+		  autoplay
+		  muted
+		  loop
+		  playsinline
+		>
+		  <source src="./videos/banner_video.mp4" type="video/mp4">
+		</video>
+	  
+		<div class="header-content">
+			<div class="header-logo">
+				<img id="dawnfolk_title" src="./images/img_logo.png" width="50%" height="50%" alt="dawnfolk" />
+					<div id="platform_container" >
+						<a href="https://store.steampowered.com/app/2308630/Dawnfolk/" target="_blank"><img class="platform" src="images/steam-logo-white.svg" alt="" width="52px" height="52px" /></a>
+						<a href="https://www.nintendo.com/us/store/products/dawnfolk-switch/" target="_blank"><img class="platform" src="images/switch-logo-black.svg" alt="" width="60px" height="60px"  /></a>
+						<a href="https://darenn.itch.io/dawnfolk" target="_blank"><img class="platform" src="images/itch_logo.svg" alt="" width="55px" height="55px" /></a>
+					</div>
+				
+			</div>
+		</div>
+	  </section>
+
+	<!--
 	<section class="section-download">
 		<div class="download-container">
 	  		<h2>Download the free demo!</h2>
 			<iframe class="download-iframe" src="https://store.steampowered.com/widget/2308630/" style="margin-left: auto;margin-right: auto; display: block;float: center;" frameborder="0" width="646" height="190"></iframe>
 			<iframe class="download-iframe" frameborder="0" src="https://itch.io/embed/2097884?linkback=true" width="552" height="167"><a href="https://darenn.itch.io/dawnfolk">Dawnfolk by Darenn Keller</a></iframe>
-			<!--<a href="https://darenn.itch.io/dawnfolk" target="_blank"><img class="download-button" src="./images/img_itch.png" alt="Download on itch.io"/></a>-->
+			<a href="https://darenn.itch.io/dawnfolk" target="_blank"><img class="download-button" src="./images/img_itch.png" alt="Download on itch.io"/></a>
 		</div>
 	</section>
+	-->
 	
 	<section class="section-trailer">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/xG-SR49Ige0?si=7mwQHC41BsJyl-Sr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 	</section>
 	
-	<section class="section-features">
-		<!-- <h2>It's cute, let's cut!</h2> -->
+	<!--<section class="section-features"> 
 		<div class="features-container">
 		
 			<div class="its-cute">
@@ -74,7 +95,8 @@
 			<a class="screenshot" data-lightbox="screenshots" href="images/screenshot-6.png"><img src="images/screenshot-6.png" alt=""></a>
 		</div>
 	</section>
-	
+	-->
+
 	<section class="section-awards">
 	
 		<div class="awards-container">
@@ -140,5 +162,30 @@
 			<br/><a href="https://dawnfolk.com/presskit" target="_blank">Press Kit</a>
 		</div>
 	</footer>
+	<audio id="bg-music" src="assets/website_background.mp3" autoplay loop><source src="assets/bonfire.mp3" type="audio/mpeg"></audio>
   </body>
+
+  <script>
+	const bgMusic = document.getElementById("bg-music");
+
+	// Listen for visibility change
+	document.addEventListener("visibilitychange", () => {
+		if (document.hidden) {
+			// Page is hidden → pause music
+			bgMusic.pause();
+		} else {
+			// Page is visible → play music
+			bgMusic.play().catch(e => {
+				// Sometimes browsers block autoplay; handle error silently
+				console.log("Autoplay blocked:", e);
+			});
+		}
+	});
+
+	window.addEventListener("blur", () => bgMusic.pause());
+	window.addEventListener("focus", () => bgMusic.play());
+
+
+	</script>
+  
 </html>
